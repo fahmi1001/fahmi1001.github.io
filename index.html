@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nur Wahmirudin — Portofolio</title>
-<meta name="description" content="Portofolio Nur Wahmirudin — Teknik Informatika, fokus keamanan siber & machine learning.">
+<meta name="description" content="Portofolio Nur Wahmirudin — Network Engineer & NOC: routing, BGP, MikroTik, FTTH, dan keamanan jaringan.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -91,7 +91,7 @@ section{padding:66px 0;border-top:1px solid var(--line)}
   transition:border-color .2s,color .2s,transform .15s
 }
 .chip:hover{border-color:var(--accent);color:var(--txt);transform:translateY(-2px)}
-.skillcols{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:8px}
+.skillcols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;margin-top:8px}
 .skillcols h3{font-size:1rem;margin-bottom:14px;display:flex;align-items:center;gap:8px}
 .skillcols h3::before{content:"";width:10px;height:10px;background:var(--accent2);border-radius:3px}
 
@@ -115,6 +115,8 @@ section{padding:66px 0;border-top:1px solid var(--line)}
 .featlist li{list-style:none;color:var(--muted);font-size:.92rem;padding:6px 0 6px 24px;position:relative}
 .featlist li::before{content:"▹";position:absolute;left:0;color:var(--accent)}
 
+.subhead{font-family:'Space Grotesk';font-weight:700;font-size:1.05rem;color:var(--accent2);margin:0 0 16px;display:flex;align-items:center;gap:10px}
+.subhead::after{content:"";flex:1;height:1px;background:var(--line)}
 .muted-s{color:var(--muted);font-weight:500;font-size:.9rem}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:6px 0 22px}
 .stats div{background:#0c121d;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
@@ -175,9 +177,9 @@ footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;color:v
   <!-- HERO -->
   <section class="hero" style="border-top:0">
     <div class="wrap">
-      <span class="tag"><span class="dot"></span> Tersedia untuk magang / kolaborasi</span>
-      <h1>Halo, saya <span class="accent">Nur Wahmirudin</span>.<br>Saya bangun sistem keamanan yang bisa dijelaskan.</h1>
-      <p class="sub">Mahasiswa Teknik Informatika dengan fokus pada <strong>keamanan siber</strong>, <strong>machine learning</strong>, dan <strong>Explainable AI</strong>. Senang membangun sistem keamanan yang bukan hanya mendeteksi, tapi juga bisa menjelaskan keputusannya.</p>
+      <span class="tag"><span class="dot"></span> Network Engineer · NOC</span>
+      <h1>Halo, saya <span class="accent">Nur Wahmirudin</span>.<br>Saya menjaga jaringan ISP tetap hidup — dan aman.</h1>
+      <p class="sub">Network Engineer &amp; NOC di lingkungan ISP: <strong>routing &amp; BGP</strong>, <strong>MikroTik</strong>, <strong>FTTH</strong>, server dan virtualisasi, serta monitoring jaringan. Sedang menyelesaikan S1 Teknik Informatika dengan fokus <strong>keamanan siber</strong> dan <strong>Explainable AI</strong>.</p>
       <div class="cta">
         <a class="btn primary" href="#proyek">Lihat Proyek ↓</a>
         <a class="btn ghost" href="#kontak">Hubungi Saya</a>
@@ -192,17 +194,17 @@ footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;color:v
       <div class="h2">Sekilas tentang saya</div>
       <div class="about">
         <div>
-          <p>Saya menempuh S1 Teknik Informatika di <strong>STMIK "AMIK Bandung"</strong>. Minat utama saya adalah persinggungan antara <strong>keamanan jaringan/web</strong> dan <strong>machine learning</strong> — bukan sekadar model dengan akurasi tinggi, tapi sistem yang <strong>dapat diterapkan</strong> dan <strong>keputusannya bisa dijelaskan</strong>.</p>
-          <p>Tugas akhir saya di bidang <strong>deteksi ancaman dengan Explainable AI</strong> — cuplikan hasilnya bisa dilihat di bagian Proyek.</p>
-          <p>Saya nyaman bekerja dari terminal Linux, mengemas layanan dengan Docker, dan menuliskan hasil apa adanya.</p>
+          <p>Saya bekerja sebagai <strong>Network Engineer dan NOC</strong> di ISP. Sehari-hari saya mengelola router core dan pelanggan, sesi BGP dan peering, jaringan FTTH, server layanan pendukung, sampai menangani gangguan.</p>
+          <p>Saya juga menempuh S1 Teknik Informatika di <strong>STMIK "AMIK Bandung"</strong>. Tugas akhir saya tentang <strong>deteksi ancaman dengan Explainable AI</strong>, dan cuplikan hasilnya ada di bagian Proyek.</p>
+          <p>Kebiasaan kerja saya: uji dulu sebelum menerapkan ke produksi, siapkan jalan untuk rollback, dan catat setiap perubahan.</p>
         </div>
         <ul class="facts">
           <li><span class="k">Nama</span><span class="v">Nur Wahmirudin</span></li>
-          <li><span class="k">Program</span><span class="v">S1 Teknik Informatika</span></li>
-          <li><span class="k">Kampus</span><span class="v">STMIK "AMIK Bandung"</span></li>
-          <li><span class="k">Fokus</span><span class="v">Cybersecurity · ML · XAI</span></li>
+          <li><span class="k">Peran</span><span class="v">Network Engineer · NOC</span></li>
+          <li><span class="k">Bidang</span><span class="v">ISP · FTTH · Routing</span></li>
+          <li><span class="k">Pendidikan</span><span class="v">S1 Teknik Informatika, STMIK "AMIK Bandung" (tingkat akhir)</span></li>
+          <li><span class="k">Minat</span><span class="v">Keamanan jaringan · XAI</span></li>
           <li><span class="k">Lokasi</span><span class="v">Bandung, Indonesia</span></li>
-          <li><span class="k">Status</span><span class="v">Mahasiswa tingkat akhir</span></li>
         </ul>
       </div>
     </div>
@@ -214,6 +216,28 @@ footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;color:v
       <div class="eyebrow">02 — Keahlian</div>
       <div class="h2">Teknologi yang saya gunakan</div>
       <div class="skillcols">
+        <div>
+          <h3>Jaringan</h3>
+          <div class="chips">
+            <span class="chip">MikroTik RouterOS</span>
+            <span class="chip">BGP · IX Peering</span>
+            <span class="chip">Load Balance &amp; Failover</span>
+            <span class="chip">QoS / Queue</span>
+            <span class="chip">L2TP · VPN Tunnel</span>
+            <span class="chip">Firewall &amp; Hardening</span>
+          </div>
+        </div>
+        <div>
+          <h3>ISP &amp; NOC</h3>
+          <div class="chips">
+            <span class="chip">FTTH · OLT / ONT</span>
+            <span class="chip">TR-069 ACS</span>
+            <span class="chip">FreeRADIUS · Hotspot</span>
+            <span class="chip">Proxmox VE</span>
+            <span class="chip">DNS · CDN Cache</span>
+            <span class="chip">Monitoring &amp; Troubleshooting</span>
+          </div>
+        </div>
         <div>
           <h3>Keamanan</h3>
           <div class="chips">
@@ -241,8 +265,7 @@ footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;color:v
             <span class="chip">Docker Compose</span>
             <span class="chip">Linux</span>
             <span class="chip">Laravel / PHP</span>
-            <span class="chip">FreeRADIUS</span>
-            <span class="chip">MikroTik</span>
+            <span class="chip">PowerShell · Bash</span>
             <span class="chip">SQLite</span>
             <span class="chip">Streamlit</span>
             <span class="chip">Git</span>
@@ -256,7 +279,60 @@ footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;color:v
   <section id="proyek">
     <div class="wrap">
       <div class="eyebrow">03 — Proyek</div>
-      <div class="h2">Yang pernah saya bangun</div>
+      <div class="h2">Yang pernah saya kerjakan</div>
+
+      <div class="subhead">Jaringan &amp; NOC</div>
+      <div class="projects" style="margin-bottom:40px">
+
+        <article class="proj">
+          <div class="badge">Routing · Router Pelanggan</div>
+          <h3>Multi-WAN Failover, Load Balancing &amp; QoS</h3>
+          <p>Merancang ulang router pelanggan dengan tiga uplink ISP: load balancing PCC berbobot, failover otomatis berbasis cek gateway, dan tunnel L2TP agar IP publik tetap stabil saat jalur utama putus.</p>
+          <ul class="featlist" style="margin-bottom:16px">
+            <li>QoS berbasis aplikasi: video call &gt; sosmed &gt; streaming (deteksi via TLS SNI)</li>
+            <li>Pemilihan jalur per port / per klien</li>
+            <li>Hardening: akses manajemen dibatasi, layanan plaintext dimatikan</li>
+          </ul>
+          <div class="meta"><span>MikroTik RouterOS</span><span>PCC</span><span>L2TP</span><span>Mangle &amp; Queue</span></div>
+        </article>
+
+        <article class="proj">
+          <div class="badge">Core · Keamanan Jaringan</div>
+          <h3>BGP Peering &amp; Mitigasi DDoS (RTBH)</h3>
+          <p>Mengelola sesi BGP ke upstream dan Internet Exchange, serta menyiapkan filter <em>Remote Triggered Black Hole</em> supaya prefix yang diserang bisa di-blackhole lewat BGP community tanpa mengganggu pelanggan lain.</p>
+          <ul class="featlist" style="margin-bottom:16px">
+            <li>Routing filter untuk community blackhole</li>
+            <li>Peering ke beberapa IX dan upstream</li>
+            <li>Backup &amp; dokumentasi konfigurasi router core</li>
+          </ul>
+          <div class="meta"><span>BGP</span><span>IX Peering</span><span>RTBH</span><span>MikroTik</span></div>
+        </article>
+
+        <article class="proj">
+          <div class="badge">Server · Virtualisasi</div>
+          <h3>Server Layanan ISP di Proxmox VE</h3>
+          <p>Mengoperasikan host Proxmox untuk layanan pendukung ISP: server ACS (TR-069) untuk manajemen ONT, DNS cache/CDN, dan server speedtest. Termasuk backup &amp; restore VM, serta pemulihan saat host bermasalah.</p>
+          <ul class="featlist" style="margin-bottom:16px">
+            <li>Restore VM dari backup vzdump</li>
+            <li>Troubleshoot clock skew yang membuat panel Proxmox error</li>
+          </ul>
+          <div class="meta"><span>Proxmox VE</span><span>Linux</span><span>DNS</span><span>TR-069 ACS</span></div>
+        </article>
+
+        <article class="proj">
+          <div class="badge">FTTH · Otomasi</div>
+          <h3>Perubahan Konfigurasi ONT Massal via ACS</h3>
+          <p>Mengubah konfigurasi WAN/VLAN di <strong>lebih dari 2.000 ONT</strong> pelanggan FTTH dari jarak jauh lewat ACS (TR-069), tanpa kunjungan teknisi. Setiap perangkat dicek dulu, dan perubahan dibatalkan otomatis jika kondisinya tidak sesuai.</p>
+          <ul class="featlist" style="margin-bottom:16px">
+            <li>Survei model ONT secara paralel dan read-only sebelum eksekusi</li>
+            <li>Log perubahan (sebelum/sesudah) dan daftar gagal per area untuk tim lapangan</li>
+          </ul>
+          <div class="meta"><span>PowerShell</span><span>FTTH / ONT</span><span>TR-069</span></div>
+        </article>
+
+      </div>
+
+      <div class="subhead">Pengembangan &amp; Keamanan</div>
       <div class="projects">
 
         <article class="proj feature">
@@ -304,7 +380,7 @@ footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;color:v
           <p class="tbl-note">IP berasal dari jaringan lab dan sengaja disamarkan. Blokir terjadi ketika skor ancaman ≥ 10.</p>
         </article>
 
-        <article class="proj">
+        <article class="proj" style="grid-column:1 / -1">
           <div class="badge">Proyek · Produksi</div>
           <h3>Captive Portal &amp; Billing Hotspot ISP</h3>
           <p>Sistem captive portal WiFi untuk ISP, multi-tenant dan white-label. Pengguna bisa login dengan klik gratis, voucher, OTP WhatsApp/SMS, atau membeli paket online. Kuota dan sesi dipantau real-time, dan koneksi diputus otomatis saat kuota habis.</p>
@@ -317,13 +393,6 @@ footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;color:v
           <div class="meta"><span>Laravel</span><span>Filament</span><span>FreeRADIUS</span><span>MySQL</span><span>Redis</span><span>Docker</span></div>
         </article>
 
-        <article class="proj">
-          <div class="badge">Proyek</div>
-          <h3>Judul Proyek Ketiga</h3>
-          <p>Deskripsi singkat proyek — ganti sesuai kebutuhan. Hapus kartu ini kalau belum ada.</p>
-          <div class="meta"><span>Teknologi</span><span>Teknologi</span></div>
-          <div class="links"><a href="#">Demo →</a><a href="#">Kode →</a></div>
-        </article>
 
       </div>
     </div>
