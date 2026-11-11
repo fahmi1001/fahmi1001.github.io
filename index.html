@@ -558,11 +558,11 @@ footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;color:v
         <div class="nc-body">
           <div class="nc-row"><span class="nc-k">$ IP publik</span><span class="nc-v" id="nc-ip">memuat…</span></div>
           <div class="nc-row"><span class="nc-k">$ ASN</span><span class="nc-v" id="nc-asn">—</span></div>
-          <div class="nc-row"><span class="nc-k">$ ISP / Org</span><span class="nc-v" id="nc-isp">—</span></div>
+          <div class="nc-row"><span class="nc-k">$ Provider (PT)</span><span class="nc-v" id="nc-org">—</span></div>
+          <div class="nc-row"><span class="nc-k">$ ISP</span><span class="nc-v" id="nc-isp">—</span></div>
           <div class="nc-row"><span class="nc-k">$ Perkiraan lokasi</span><span class="nc-v" id="nc-loc">—</span></div>
           <div class="nc-row"><span class="nc-k">$ Browser</span><span class="nc-v" id="nc-ua">—</span></div>
         </div>
-        <p class="nc-note">Data ini hanya ditampilkan di layar Anda dan <strong>tidak disimpan ke mana pun</strong>. Setiap server yang Anda akses memang melihat IP publik Anda — ini sekadar menunjukkannya secara terbuka.</p>
       </div>
     </div>
   </section>
@@ -584,7 +584,8 @@ footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;color:v
   // --- readout koneksi pengunjung (hanya tampil, tidak disimpan) ---
   (function(){
     var ipEl=document.getElementById('nc-ip'); if(!ipEl) return;
-    var asnEl=document.getElementById('nc-asn'), ispEl=document.getElementById('nc-isp'),
+    var asnEl=document.getElementById('nc-asn'), orgEl=document.getElementById('nc-org'),
+        ispEl=document.getElementById('nc-isp'),
         locEl=document.getElementById('nc-loc'), uaEl=document.getElementById('nc-ua');
     ipEl.classList.add('load');
     try{
@@ -598,7 +599,7 @@ footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;color:v
 
     function esc(s){ return String(s).replace(/[<>&]/g,function(c){return c==='<'?'&lt;':c==='>'?'&gt;':'&amp;';}); }
     function fail(){ ipEl.classList.remove('load'); ipEl.textContent='tidak tersedia';
-      asnEl.textContent=ispEl.textContent=locEl.textContent='—'; }
+      asnEl.textContent=orgEl.textContent=ispEl.textContent=locEl.textContent='—'; }
 
     fetch('https://ipwho.is/?fields=ip,success,city,region,country,connection').then(function(r){return r.json();}).then(function(d){
       if(!d||d.success===false||!d.ip) throw 0;
@@ -606,6 +607,7 @@ footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;color:v
       ipEl.textContent=esc(d.ip);
       var cn=d.connection||{};
       asnEl.textContent=cn.asn?('AS'+cn.asn):'—';
+      orgEl.textContent=esc(cn.org||cn.isp||'—');
       ispEl.textContent=esc(cn.isp||cn.org||'—');
       locEl.textContent=esc([d.city,d.region,d.country].filter(Boolean).join(', ')||'—');
     }).catch(function(){
@@ -615,6 +617,7 @@ footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;color:v
         ipEl.classList.remove('load');
         ipEl.textContent=esc(d.ip);
         asnEl.textContent=d.asn?esc(d.asn):'—';
+        orgEl.textContent=esc(d.org||'—');
         ispEl.textContent=esc(d.org||'—');
         locEl.textContent=esc([d.city,d.region,d.country_name].filter(Boolean).join(', ')||'—');
       }).catch(fail);
