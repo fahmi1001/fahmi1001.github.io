@@ -140,6 +140,41 @@ section{padding:66px 0;border-top:1px solid var(--line)}
 .lightbox img{max-width:100%;max-height:90vh;background:#fff;border-radius:8px;padding:10px}
 @media(max-width:820px){.gallery{grid-template-columns:1fr}.stats b{font-size:1.25rem}}
 
+/* vendors */
+.vendors{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.vendor{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;position:relative;overflow:hidden;transition:border-color .2s,transform .2s}
+.vendor::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(56,225,176,.12) 50%,transparent 70%);transform:translateX(-100%);transition:transform .7s}
+.vendor:hover{border-color:var(--accent);transform:translateY(-3px)}
+.vendor:hover::after{transform:translateX(100%)}
+.vendor h4{font-family:'Space Grotesk';font-size:1.05rem;margin:8px 0 4px}
+.vendor p{color:var(--muted);font-size:.84rem;line-height:1.5}
+.vic{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;background:rgba(79,140,255,.14);color:var(--accent2);font-size:.8rem}
+.marquee{overflow:hidden;border:1px solid var(--line);border-radius:12px;background:#0c121d;margin-bottom:18px;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marquee .track{display:flex;gap:46px;width:max-content;padding:14px 0;animation:scroll 28s linear infinite}
+.marquee span{font-family:'Space Grotesk';font-weight:700;letter-spacing:3px;color:#3a4a63;font-size:1.05rem;white-space:nowrap}
+.marquee span:nth-child(odd){color:var(--muted)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* animasi */
+#net{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.55}
+.hero .wrap{position:relative;z-index:1}
+.typed{color:var(--accent2);font-family:'Space Grotesk';font-weight:600;font-size:clamp(1rem,2.6vw,1.25rem);margin-top:14px;min-height:1.6em}
+.typed::after{content:"▍";color:var(--accent);margin-left:2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.dot{animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(56,225,176,.6)}50%{box-shadow:0 0 0 7px rgba(56,225,176,0)}}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.hero h1,.hero .sub,.hero .cta,.hero .tag{animation:rise .8s ease both}
+.hero .sub{animation-delay:.15s}.hero .cta{animation-delay:.3s}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  #net{display:none}
+}
+
 /* contact */
 .contact{text-align:center}
 .contact .h2{margin-bottom:14px}
@@ -176,9 +211,11 @@ footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;color:v
 <main>
   <!-- HERO -->
   <section class="hero" style="border-top:0">
+    <canvas id="net" aria-hidden="true"></canvas>
     <div class="wrap">
       <span class="tag"><span class="dot"></span> Network Engineer · NOC</span>
       <h1>Halo, saya <span class="accent">Nur Wahmirudin</span>.<br>Saya menjaga jaringan ISP tetap hidup — dan aman.</h1>
+      <div class="typed" id="typed" aria-label="Routing & BGP, FTTH OLT/ONT, NOC dan monitoring, keamanan jaringan"></div>
       <p class="sub">Network Engineer &amp; NOC di lingkungan ISP: <strong>routing &amp; BGP</strong>, <strong>MikroTik</strong>, <strong>FTTH</strong>, server dan virtualisasi, serta monitoring jaringan. Sedang menyelesaikan S1 Teknik Informatika dengan fokus <strong>keamanan siber</strong> dan <strong>Explainable AI</strong>.</p>
       <div class="cta">
         <a class="btn primary" href="#proyek">Lihat Proyek ↓</a>
@@ -271,6 +308,21 @@ footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;color:v
             <span class="chip">Git</span>
           </div>
         </div>
+      </div>
+
+      <div class="subhead" style="margin-top:46px">Perangkat yang saya tangani</div>
+      <div class="marquee" aria-hidden="true"><div class="track">
+        <span>HUAWEI</span><span>ZTE</span><span>JUNIPER</span><span>MIKROTIK</span><span>BDCOM</span><span>CISCO</span><span>LAYER 2 SWITCH</span>
+        <span>HUAWEI</span><span>ZTE</span><span>JUNIPER</span><span>MIKROTIK</span><span>BDCOM</span><span>CISCO</span><span>LAYER 2 SWITCH</span>
+      </div></div>
+      <div class="vendors">
+        <div class="vendor reveal"><div class="vic">◆</div><h4>Huawei</h4><p>OLT GPON/EPON, ONT, router &amp; switch</p></div>
+        <div class="vendor reveal"><div class="vic">◆</div><h4>ZTE</h4><p>OLT, registrasi &amp; provisioning ONT, profil VLAN</p></div>
+        <div class="vendor reveal"><div class="vic">◆</div><h4>Juniper</h4><p>Router Junos: BGP, routing policy, interface</p></div>
+        <div class="vendor reveal"><div class="vic">◆</div><h4>MikroTik</h4><p>RouterOS &amp; CRS: BGP, PCC, QoS, firewall, tunnel</p></div>
+        <div class="vendor reveal"><div class="vic">◆</div><h4>BDCOM</h4><p>OLT EPON/GPON &amp; switch distribusi</p></div>
+        <div class="vendor reveal"><div class="vic">◆</div><h4>Cisco</h4><p>Router &amp; switch IOS: VLAN, trunk, routing</p></div>
+        <div class="vendor reveal"><div class="vic">◆</div><h4>Layer 2 Switch</h4><p>VLAN, trunk/access, LACP, STP, port mirroring</p></div>
       </div>
     </div>
   </section>
@@ -425,6 +477,77 @@ footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;color:v
   var lb=document.createElement('div');lb.className='lightbox';lb.innerHTML='<img alt="">';document.body.appendChild(lb);
   document.querySelectorAll('.gallery img').forEach(function(im){im.addEventListener('click',function(){lb.firstChild.src=im.src;lb.firstChild.alt=im.alt;lb.classList.add('open')})});
   lb.addEventListener('click',function(){lb.classList.remove('open')});
+
+  var RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // --- teks berganti (typing) ---
+  (function(){
+    var el=document.getElementById('typed'); if(!el) return;
+    var words=['Routing & BGP · IX Peering','FTTH · OLT / ONT · TR-069','NOC · Monitoring · Troubleshooting','Keamanan Jaringan · Explainable AI'];
+    if(RM){ el.textContent=words[0]; return; }
+    var w=0,i=0,del=false;
+    (function tick(){
+      var s=words[w]; el.textContent=s.slice(0,i);
+      if(!del && i<s.length){ i++; setTimeout(tick,55); }
+      else if(!del){ del=true; setTimeout(tick,1600); }
+      else if(i>0){ i--; setTimeout(tick,28); }
+      else { del=false; w=(w+1)%words.length; setTimeout(tick,300); }
+    })();
+  })();
+
+  // --- latar topologi jaringan (node + paket berjalan) ---
+  (function(){
+    var c=document.getElementById('net'); if(!c||RM) return;
+    var x=c.getContext('2d'), W,H,dpr, nodes=[], links=[], packets=[];
+    function build(){
+      dpr=Math.min(window.devicePixelRatio||1,2);
+      W=c.clientWidth; H=c.clientHeight; c.width=W*dpr; c.height=H*dpr; x.setTransform(dpr,0,0,dpr,0,0);
+      var n=Math.max(14,Math.min(34,Math.round(W*H/26000)));
+      nodes=[]; links=[]; packets=[];
+      for(var k=0;k<n;k++) nodes.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.18,r:Math.random()<.2?3.2:2,core:Math.random()<.2});
+      for(var a=0;a<n;a++){
+        var d=nodes.map(function(p,b){return {b:b,d:(p.x-nodes[a].x)**2+(p.y-nodes[a].y)**2}}).sort(function(p,q){return p.d-q.d});
+        for(var m=1;m<=2;m++){ var b=d[m].b; if(!links.some(function(l){return (l[0]===a&&l[1]===b)||(l[0]===b&&l[1]===a)})) links.push([a,b]); }
+      }
+    }
+    function spawn(){ if(packets.length<18){ var l=links[Math.random()*links.length|0]; packets.push({l:l,t:0,s:.004+Math.random()*.008,rev:Math.random()<.5,c:Math.random()<.15?'#ff6b6b':(Math.random()<.5?'#38e1b0':'#4f8cff')}); } }
+    function frame(){
+      x.clearRect(0,0,W,H);
+      nodes.forEach(function(p){ p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>W)p.vx*=-1; if(p.y<0||p.y>H)p.vy*=-1; });
+      x.lineWidth=1;
+      links.forEach(function(l){ var a=nodes[l[0]],b=nodes[l[1]]; x.strokeStyle='rgba(79,140,255,.16)'; x.beginPath(); x.moveTo(a.x,a.y); x.lineTo(b.x,b.y); x.stroke(); });
+      nodes.forEach(function(p){ x.fillStyle=p.core?'#4f8cff':'rgba(139,155,180,.7)'; x.beginPath(); x.arc(p.x,p.y,p.r,0,7); x.fill(); });
+      if(Math.random()<.12) spawn();
+      packets=packets.filter(function(k){
+        k.t+=k.s; if(k.t>=1) return false;
+        var a=nodes[k.l[k.rev?1:0]], b=nodes[k.l[k.rev?0:1]], px=a.x+(b.x-a.x)*k.t, py=a.y+(b.y-a.y)*k.t;
+        x.fillStyle=k.c; x.shadowColor=k.c; x.shadowBlur=10; x.beginPath(); x.arc(px,py,2.2,0,7); x.fill(); x.shadowBlur=0;
+        return true;
+      });
+      if(!document.hidden) requestAnimationFrame(frame); else setTimeout(function(){requestAnimationFrame(frame)},500);
+    }
+    build(); frame();
+    var rt; window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(build,200); });
+  })();
+
+  // --- muncul saat discroll + hitung angka ---
+  document.querySelectorAll('.proj, .skillcols > div, .facts, .about > div, .stats > div, .gallery figure, .tbl-wrap').forEach(function(e){ e.classList.add('reveal'); });
+  function countUp(el){
+    var raw=el.textContent.replace(/\./g,''), to=parseInt(raw,10); if(isNaN(to)) return;
+    var t0=null; function step(ts){ if(!t0)t0=ts; var p=Math.min((ts-t0)/1200,1), v=Math.round(to*(1-Math.pow(1-p,3))); el.textContent=v.toLocaleString('id-ID'); if(p<1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+  var rv=document.querySelectorAll('.reveal');
+  if(RM || !('IntersectionObserver' in window)){ rv.forEach(function(e){e.classList.add('in')}); }
+  else {
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){
+      var el=e.target, sib=[].slice.call(el.parentNode.children).filter(function(s){return s.classList.contains('reveal')}), idx=Math.max(0,sib.indexOf(el));
+      el.style.transitionDelay=Math.min(idx*70,350)+'ms'; el.classList.add('in');
+      var b=el.parentNode.classList.contains('stats')?el.querySelector('b'):null; if(b) countUp(b);
+      io.unobserve(el);
+    }}); },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    rv.forEach(function(e){ io.observe(e); });
+  }
 </script>
 </body>
 </html>
