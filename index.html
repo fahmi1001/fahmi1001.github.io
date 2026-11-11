@@ -589,7 +589,7 @@ footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;color:v
 
   // logo -> kembali ke atas
   var tt=document.getElementById('totop');
-  if(tt) tt.addEventListener('click',function(e){ e.preventDefault(); n.classList.remove('open'); if(card) card.classList.remove('hide'); window.scrollTo({top:0,behavior:'smooth'}); });
+  if(tt) tt.addEventListener('click',function(e){ e.preventDefault(); n.classList.remove('open'); if(card) card.classList.remove('hide'); window.scrollTo(0,0); });
 
   // widget koneksi: ciutkan/kembangkan, default ciut di layar kecil
   (function(){
