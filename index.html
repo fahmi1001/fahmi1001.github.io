@@ -270,9 +270,19 @@ footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;color:v
             <span class="chip">FTTH · OLT / ONT</span>
             <span class="chip">TR-069 ACS</span>
             <span class="chip">FreeRADIUS · Hotspot</span>
-            <span class="chip">Proxmox VE</span>
-            <span class="chip">DNS · CDN Cache</span>
+            <span class="chip">CCTV IP · NVR</span>
             <span class="chip">Monitoring &amp; Troubleshooting</span>
+          </div>
+        </div>
+        <div>
+          <h3>Server</h3>
+          <div class="chips">
+            <span class="chip">Proxmox VE</span>
+            <span class="chip">Ubuntu Server</span>
+            <span class="chip">NMS (LibreNMS)</span>
+            <span class="chip">DNS · CDN Cache</span>
+            <span class="chip">Email Server</span>
+            <span class="chip">Web Server (Nginx / Apache)</span>
           </div>
         </div>
         <div>
@@ -362,13 +372,14 @@ footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;color:v
 
         <article class="proj">
           <div class="badge">Server · Virtualisasi</div>
-          <h3>Server Layanan ISP di Proxmox VE</h3>
-          <p>Mengoperasikan host Proxmox untuk layanan pendukung ISP: server ACS (TR-069) untuk manajemen ONT, DNS cache/CDN, dan server speedtest. Termasuk backup &amp; restore VM, serta pemulihan saat host bermasalah.</p>
+          <h3>Server &amp; Layanan ISP di Proxmox / Ubuntu</h3>
+          <p>Mengelola server yang menopang operasional ISP: <strong>NMS</strong> untuk monitoring perangkat, <strong>DNS</strong> (authoritative &amp; cache), <strong>email server</strong>, <strong>web server</strong>, ACS (TR-069), dan server speedtest. Semuanya berjalan sebagai VM di Proxmox VE dengan Ubuntu Server.</p>
           <ul class="featlist" style="margin-bottom:16px">
-            <li>Restore VM dari backup vzdump</li>
-            <li>Troubleshoot clock skew yang membuat panel Proxmox error</li>
+            <li>Monitoring perangkat, grafik trafik, dan alert gangguan</li>
+            <li>Backup &amp; restore VM (vzdump), pemulihan saat host bermasalah</li>
+            <li>Hardening: akses SSH dengan key, firewall, sertifikat SSL</li>
           </ul>
-          <div class="meta"><span>Proxmox VE</span><span>Linux</span><span>DNS</span><span>TR-069 ACS</span></div>
+          <div class="meta"><span>Proxmox VE</span><span>Ubuntu Server</span><span>NMS</span><span>DNS</span><span>Mail</span><span>Nginx / Apache</span></div>
         </article>
 
         <article class="proj">
@@ -380,6 +391,55 @@ footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;color:v
             <li>Log perubahan (sebelum/sesudah) dan daftar gagal per area untuk tim lapangan</li>
           </ul>
           <div class="meta"><span>PowerShell</span><span>FTTH / ONT</span><span>TR-069</span></div>
+        </article>
+
+      </div>
+
+      <div class="subhead">Proyek Infrastruktur</div>
+      <div class="projects" style="margin-bottom:40px">
+
+        <article class="proj">
+          <div class="badge">Pendidikan · Kampus</div>
+          <h3>Infrastruktur Jaringan Universitas</h3>
+          <p>Membangun dan memigrasi jaringan kampus: backbone fiber antar gedung, distribusi switch per gedung, segmentasi VLAN (akademik, staf, mahasiswa, WiFi), serta manajemen bandwidth sesuai SLA.</p>
+          <ul class="featlist" style="margin-bottom:16px">
+            <li>Survei, desain topologi, dan berita acara serah terima</li>
+            <li>Migrasi tanpa mengganggu layanan yang sedang berjalan</li>
+          </ul>
+          <div class="meta"><span>Fiber Backbone</span><span>VLAN</span><span>Core &amp; Distribution</span><span>WiFi</span></div>
+        </article>
+
+        <article class="proj">
+          <div class="badge">Hunian · Apartemen</div>
+          <h3>Jaringan Internet Apartemen</h3>
+          <p>Menyediakan internet untuk penghuni apartemen: jaringan FTTH per unit, OLT dan splitter per lantai, hotspot area bersama, serta pemisahan jaringan antar unit.</p>
+          <ul class="featlist" style="margin-bottom:16px">
+            <li>Provisioning ONT per unit dan paket berlangganan</li>
+            <li>Captive portal untuk area publik</li>
+          </ul>
+          <div class="meta"><span>FTTH / GPON</span><span>OLT · ONT</span><span>Hotspot</span><span>MikroTik</span></div>
+        </article>
+
+        <article class="proj">
+          <div class="badge">Industri · Korporat</div>
+          <h3>Jaringan Pabrik &amp; Kantor Korporat</h3>
+          <p>Merancang jaringan untuk pabrik dan kantor: koneksi dedicated dengan backup link, firewall, VPN antar cabang, VLAN per divisi, dan WiFi area produksi maupun kantor.</p>
+          <ul class="featlist" style="margin-bottom:16px">
+            <li>Failover link utama ↔ cadangan</li>
+            <li>Akses remote aman ke sistem internal (VPN)</li>
+          </ul>
+          <div class="meta"><span>Dedicated Internet</span><span>VPN Site-to-Site</span><span>Firewall</span><span>VLAN</span></div>
+        </article>
+
+        <article class="proj">
+          <div class="badge">Keamanan Fisik · CCTV</div>
+          <h3>Instalasi &amp; Integrasi CCTV IP</h3>
+          <p>Menyusun kebutuhan dan BOQ, memasang kamera IP dan NVR, membuat VLAN khusus CCTV, lalu menyiapkan akses pemantauan jarak jauh yang aman untuk klien.</p>
+          <ul class="featlist" style="margin-bottom:16px">
+            <li>Perhitungan bandwidth dan kapasitas rekaman</li>
+            <li>Jaringan CCTV terpisah dari jaringan kantor</li>
+          </ul>
+          <div class="meta"><span>IP Camera</span><span>NVR</span><span>PoE Switch</span><span>Remote Access</span></div>
         </article>
 
       </div>
